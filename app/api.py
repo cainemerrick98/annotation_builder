@@ -19,6 +19,7 @@ class AnnotationRequest(BaseModel):
 
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
+    print(file.content_type)
     if file.content_type not in settings.ACCEPTED_FILE_EXTENSIONS:
         raise HTTPException(status_code=400, detail="Invalid file extension")
     if file.size > settings.MAX_FILE_SIZE:

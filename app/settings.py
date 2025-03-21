@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings:
-    ACCEPTED_FILE_EXTENSIONS = [".xlsx", ".csv"]
+    ACCEPTED_FILE_EXTENSIONS = ["application/vnd.ms-excel"]
     MAX_FILE_SIZE = 10 * 1024 * 1024 # 10MB
     LLM_MODEL = "gpt-4o-mini"
     LLM_API_KEY = os.getenv("OPENAI_API_KEY")
