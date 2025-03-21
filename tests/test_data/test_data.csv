@@ -1,0 +1,21 @@
+customer_id,inquiry_text,response_time_minutes,resolved
+1001,"I've been waiting for my refund for over 2 weeks now. When will I receive it?",45,Yes
+1002,"Your product is amazing! Just wanted to say thank you for the great customer service.",12,Yes
+1003,"I ordered the wrong size. How do I exchange it for a different one?",23,Yes
+1004,"The item I received is damaged. I want a replacement immediately.",67,Yes
+1005,"I can't log into my account. I've tried resetting my password multiple times.",34,Yes
+1006,"Where can I find information about your return policy?",8,Yes
+1007,"I've been on hold for 30 minutes! This is unacceptable service.",56,No
+1008,"My subscription was supposed to end last month but I was charged again.",41,Yes
+1009,"Do you offer discounts for bulk orders?",15,Yes
+1010,"The instructions in the manual don't match the product I received.",72,No
+1011,"I love your company's commitment to sustainability. Keep up the good work!",5,Yes
+1012,"My delivery was supposed to arrive yesterday but it's still not here.",38,Yes
+1013,"Can I change my shipping address after placing an order?",19,Yes
+1014,"The color of the item I received doesn't match what was shown on the website.",47,Yes
+1015,"I've been a loyal customer for years and would like to know about any loyalty programs.",22,Yes
+1016,"Your website is constantly crashing when I try to checkout.",53,No
+1017,"I was charged twice for my order. Please refund one of the charges.",31,Yes
+1018,"How do I track my order? I can't find the tracking information in my email.",14,Yes
+1019,"The customer service representative I spoke with yesterday was very rude.",62,No
+1020,"I'd like to cancel my order before it ships. Is that possible?",27,Yes
