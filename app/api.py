@@ -4,11 +4,19 @@ from app.annotation_builder import AnnotationBuilder
 from pydantic import BaseModel
 from app.files import save_uploaded_file, save_annotated_file, load_file_to_dataframe
 import uuid
-import os
 from fastapi.responses import StreamingResponse
 from io import StringIO
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
