@@ -1,8 +1,12 @@
 import os
 from app.settings import settings
 
-def save_file(file_id: str, content: bytes):
-    with open(os.path.join(settings.UPLOAD_FOLDER, f"{file_id}.xlsx"), "wb") as f:
+def save_uploaded_file(file_id: str, content: bytes):
+    with open(os.path.join(settings.UPLOAD_FOLDER, f"{file_id}.csv"), "wb") as f:
+        f.write(content)
+
+def save_annotated_file(file_id: str, content: bytes):
+    with open(os.path.join(settings.ANNOTATED_FOLDER, f"{file_id}.csv"), "wb") as f:
         f.write(content)
 
 def load_file_to_dataframe(file_id: str, use_test_folder: bool = False):
@@ -22,14 +26,7 @@ def load_file_to_dataframe(file_id: str, use_test_folder: bool = False):
     folder = settings.TEST_DATA_FOLDER if use_test_folder else settings.UPLOAD_FOLDER
     file_path = os.path.join(folder, f"{file_id}")
     
-    # Try to find the file with accepted extensions
     for ext in settings.ACCEPTED_FILE_EXTENSIONS:
-        full_path = f"{file_path}{ext}"
-        if os.path.exists(full_path):
-            if ext.lower() == ".csv":
-                return pd.read_csv(full_path)
-            elif ext.lower() == ".xlsx":
-                return pd.read_excel(full_path)
-    
-    # If no file is found with accepted extensions
+        if os.path.exists(file_path + ext):
+            return pd.read_csv(file_path + ext)
     raise FileNotFoundError(f"No file found for ID {file_id} with accepted extensions")
